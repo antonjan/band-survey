@@ -7,7 +7,7 @@ output =date +"%d-%m-%Y".csv
 #rtl_power -f 144M:146M:1K -i 1m -g 50 -1 >> "${output}.csv"
 rtl_power -d0 -f 144M:146M:10K -1 -g 50 >> "vhf_monitoring_`date '+%d-%m-%Y'`.csv"
 # There is an assumption that the datafile ends in ".csv"
-name=$(output)
+name=$output
 
 # gnuplot doesn't do parameters very well, but we can dynamcally insert them
 for plot in *.plot ; do
